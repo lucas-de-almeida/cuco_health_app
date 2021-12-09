@@ -1,6 +1,5 @@
-import 'package:cuco_health_app/modules/home_page/bindings/home_page_binding.dart';
-import 'package:cuco_health_app/modules/home_page/view/home_page.dart';
-import 'package:cuco_health_app/routes/my_pages.dart';
+import 'package:cuco_health_app/modules/menu_page/bindings/menu_binding.dart';
+import 'package:cuco_health_app/modules/menu_page/view/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +15,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
-      getPages: MyPages.pages,
-      home: const HomePage(),
-      initialBinding: HomePageBinding(),
+      home: const MenuPage(),
+      initialBinding: MenuBinding(),
     );
   }
 }
