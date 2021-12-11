@@ -12,11 +12,10 @@ class ProfileRepository {
     var url = 'https://api.github.com/users/lucas-de-almeida';
 
     final result = await _restClient.get<Profile?>(url, decoder: (data) {
-      final resultData = data["results"];
+      var resultData = data;
+
       if (resultData != null) {
-        return resultData
-            .map<Profile>((person) => Profile.fromMap(person))
-            .toList();
+        return resultData = Profile.fromMap(data);
       } else {
         Get.snackbar('erro', 'message');
         throw Exception();

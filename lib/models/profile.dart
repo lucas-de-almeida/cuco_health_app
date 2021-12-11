@@ -18,13 +18,13 @@ class Profile {
 
   @override
   String toString() {
-    return 'Profile(name: $name, avatar: $avatar, email: $email, bio: $bio, public_repos: $publicRepo, url: $url)';
+    return 'Profile(name: $name, avatar_url: $avatar, email: $email, bio: $bio, public_repos: $publicRepo, url: $url)';
   }
 
   Map<String, dynamic> toMap() {
     return {
       'name': name,
-      'avatar': avatar,
+      'avatar_url': avatar,
       'email': email,
       'bio': bio,
       'public_repos': publicRepo,
@@ -35,7 +35,7 @@ class Profile {
   factory Profile.fromMap(Map<String, dynamic> map) {
     return Profile(
       name: map['name'] ?? '',
-      avatar: map['avatar'] ?? '',
+      avatar: map['avatar_url'] ?? '',
       email: map['email'] ?? 'lucasdealmeidadev@gmail.com',
       bio: map['bio'] ?? '',
       publicRepo: map['public_repos']?.toInt() ?? 0,
