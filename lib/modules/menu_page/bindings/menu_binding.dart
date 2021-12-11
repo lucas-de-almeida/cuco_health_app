@@ -7,6 +7,6 @@ class MenuBinding implements Bindings {
   @override
   void dependencies() {
     Get.put(MenuController());
-    Get.put(HomePageController(), permanent: true);
+    //Get.put(HomePageController(), permanent: true);
   }
 }
