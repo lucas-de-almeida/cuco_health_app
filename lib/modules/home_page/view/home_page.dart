@@ -9,15 +9,59 @@ class HomePage extends GetView<HomePageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HomePage'),
+        centerTitle: true,
+        title: const Text('Quem sou eu ?'),
       ),
       body: Center(
-          child: Container(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text('ir pra outra tela'),
+        child: Container(
+          child: controller.obx(
+            (value) => Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(40),
+                      ),
+                      child: CircleAvatar(
+                        maxRadius: 60,
+                        child: Image.network(controller.profile!.avatar),
+                      ),
+                    ),
+                  ),
+                
+                Text(controller.profile!.name),
+                Text("Quantidade de projetos no github"),
+                Text('${controller.profile!.publicRepo}'),
+                Text("Descrição:"),
+                Text(controller.profile!.bio),
+                Text('Email de contato'),
+                Text(controller.profile!.email)
+              ],
+            ),
+            onLoading: Center(
+              child: CircularProgressIndicator(
+                color: Colors.black,
+              ),
+            ),
+            onError: (value) => Expanded(
+              child: Center(
+                child: Text('$value'),
+              ),
+            ),
+            onEmpty: Expanded(
+              child: Center(
+                child: Column(
+                  children: [
+                    Text(
+                        'Sem informações para mostrar, por favor reinicie o aplicativo'),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ),
-      )),
+      ),
     );
   }
 }
