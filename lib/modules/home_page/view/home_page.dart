@@ -1,6 +1,7 @@
 import 'package:cuco_health_app/modules/home_page/controller/home_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class HomePage extends GetView<HomePageController> {
   const HomePage({Key? key}) : super(key: key);
@@ -19,17 +20,31 @@ class HomePage extends GetView<HomePageController> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: ClipRRect(
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(40),
-                      ),
-                      child: CircleAvatar(
-                        maxRadius: 60,
-                        child: Image.network(controller.profile!.avatar),
+                  child: Material(
+                    elevation: 2,
+                    borderRadius: BorderRadius.circular(30),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      clipBehavior: Clip.antiAlias,
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: controller.profile!.avatar,
+                        width: 100,
+                        height: 100,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                
+                  //  ClipRRect(
+                  //     borderRadius: const BorderRadius.all(
+                  //       Radius.circular(40),
+                  //     ),
+                  //     child: CircleAvatar(
+                  //       maxRadius: 60,
+                  //       child: Image.network(controller.profile!.avatar),
+                  //     ),
+                  //   ),
+                ),
                 Text(controller.profile!.name),
                 Text("Quantidade de projetos no github"),
                 Text('${controller.profile!.publicRepo}'),
