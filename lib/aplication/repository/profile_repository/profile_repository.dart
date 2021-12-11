@@ -1,5 +1,4 @@
 import 'package:cuco_health_app/aplication/rest_client/rest_client.dart';
-import 'package:cuco_health_app/models/person.dart';
 import 'package:cuco_health_app/models/profile.dart';
 import 'package:get/get.dart';
 

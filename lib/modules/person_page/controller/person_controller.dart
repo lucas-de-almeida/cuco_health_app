@@ -2,6 +2,7 @@ import 'package:cuco_health_app/aplication/repository/person_repository/person_r
 import 'package:cuco_health_app/aplication/rest_client/rest_client.dart';
 import 'package:cuco_health_app/aplication/ui/messages/messages_mixin.dart';
 import 'package:cuco_health_app/models/person.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 RestClient rClient = RestClient();
@@ -58,6 +59,8 @@ class PersonController extends GetxController with MessagesMixin, StateMixin {
 
       return person;
     } catch (e, s) {
+      debugPrint('$s');
+      debugPrint('$e');
       message(MessageModel.error(
           title: 'Alerta', message: 'Falha ao buscar lista de amigos'));
     }
