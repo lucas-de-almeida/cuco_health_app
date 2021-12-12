@@ -14,3 +14,4 @@ Aplicativo criado apra demosntração de conhecimentos em flutter e seus perifer
 - Flutter launcher icon para alteração do logo do aplicativo
 
 - flutter native splash para criação das imagens dimensionadas para splash screen
+
