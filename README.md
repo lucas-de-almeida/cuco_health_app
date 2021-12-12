@@ -1,16 +1,16 @@
-# cuco_health_app
+# cuco_health_app Challenge
 
-A new Flutter project.
+Aplicativo criado apra demosntração de conhecimentos em flutter e seus perifericos
+## Features
 
-## Getting Started
+- Splash screen com logo da CUCO HEALTH
+- Pagina de com perfil do criador do aplicativo com informações vindas do repositorio do git-hub
 
-This project is a starting point for a Flutter application.
+- Pagina de amigos com com informações vindas da API Random, apresentadas em forma de Card.
+## Libs Utilizadas
 
-A few resources to get you started if this is your first Flutter project:
+- GetX para injeção de dependencias, controle de estados, gerenciamento de rotas
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Flutter launcher icon para alteração do logo do aplicativo
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- flutter native splash para criação das imagens dimensionadas para splash screen
