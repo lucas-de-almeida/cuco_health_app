@@ -19,7 +19,8 @@ class HomePage extends GetView<HomePageController> {
             (value) => Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(
+                      left: 8.0, right: 8.0, bottom: 8.0, top: 16),
                   child: Material(
                     elevation: 2,
                     borderRadius: BorderRadius.circular(30),
@@ -35,23 +36,82 @@ class HomePage extends GetView<HomePageController> {
                       ),
                     ),
                   ),
-                  //  ClipRRect(
-                  //     borderRadius: const BorderRadius.all(
-                  //       Radius.circular(40),
-                  //     ),
-                  //     child: CircleAvatar(
-                  //       maxRadius: 60,
-                  //       child: Image.network(controller.profile!.avatar),
-                  //     ),
-                  //   ),
                 ),
-                Text(controller.profile!.name),
-                Text("Quantidade de projetos no github"),
-                Text('${controller.profile!.publicRepo}'),
-                Text("Descrição:"),
-                Text(controller.profile!.bio),
-                Text('Email de contato'),
-                Text(controller.profile!.email)
+                SizedBox(
+                  height: Get.height * 0.05,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFc8e2f7),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  width: Get.width * 0.8,
+                  height: Get.height * 0.38,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(left: 8.0, right: 8.0, top: 8),
+                    child: Column(
+                      children: [
+                        Text(
+                          controller.profile!.name,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: Get.height * 0.02,
+                        ),
+                        Text(
+                          "Quantidade de projetos no github",
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          '${controller.profile!.publicRepo}',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: Get.height * 0.02,
+                        ),
+                        Text(
+                          "Descrição:",
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          controller.profile!.bio,
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(
+                          height: Get.height * 0.03,
+                        ),
+                        Text('Email de contato'),
+                        Text(controller.profile!.email)
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: Get.height * 0.02,
+                ),
+                Column(
+                  children: [
+                    Text('Informações disponibilizadas por Github'),
+                    Material(
+                      borderRadius: BorderRadius.circular(10),
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          clipBehavior: Clip.antiAlias,
+                          child: Image.asset(
+                            'assets/images/github.png',
+                            height: Get.height * 0.08,
+                            width: Get.width * 0.15,
+                          )),
+                    ),
+                  ],
+                )
               ],
             ),
             onLoading: Center(
