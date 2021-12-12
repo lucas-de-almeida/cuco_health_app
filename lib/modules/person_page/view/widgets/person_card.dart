@@ -1,8 +1,6 @@
 import 'package:cuco_health_app/models/person.dart';
 import 'package:cuco_health_app/modules/person_page/controller/person_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:transparent_image/transparent_image.dart';
 
