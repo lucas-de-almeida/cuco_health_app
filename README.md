@@ -15,3 +15,9 @@ Aplicativo criado apra demosntração de conhecimentos em flutter e seus perifer
 
 - flutter native splash para criação das imagens dimensionadas para splash screen
 
+![alt text](https://raw.githubusercontent.com/lucas-de-almeida/cuco_health_app/main/assets/images/perfil_readme.jpg)
+
+
+
+![alt text](https://raw.githubusercontent.com/lucas-de-almeida/cuco_health_app/main/assets/images/person_readme.jpg)
+
